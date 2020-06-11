@@ -1,6 +1,22 @@
-// fonts
+// Fonts
 $font-main: "Roboto", sans-serif;
+$font-secondary:'Roboto Slab', serif;
 
-// colors
-$color-white: #f3f4f5;
-$color-secondary: #999;
+// Color palette
+$dark-grey-blue: #304268;
+$cerulean: #0271bc;
+$white: #ffffff;
+$greyish-brown: #4a4a4a;
+$bright-orange: #f26002;
+$ice-blue: #eff9ff;
+$black-50: rgba(0, 0, 0, 0.5); // ¿Dónde?
+$black: #000000;
+
+// Functional color palette
+
+$color-text-light: $greyish-brown;
+$color-text-dark: $black;
+$color-text-white: $white;
+$color-primary: $dark-grey-blue;
+$color-primary-light: $ice-blue;
+$color-secondary: $bright-orange;
