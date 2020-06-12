@@ -1,5 +1,6 @@
 .page__header {
-  display: flex;
-  justify-content: space-evenly;
-  margin-bottom: 3rem;
+    position: fixed;
+    height: 44px;
+    width: 44px;
+    background: $color-primary-alternative url(../images/ico-menu.svg) no-repeat center;
 }

@@ -1,8 +1,50 @@
+/* Footer Section */
+
 .page__footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100vw;
-  padding: 1rem;
-  color: $color-secondary;
+    position: relative;
+    border: solid 1px red;
+
+    .footer__button {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        // Fix centering with translate
+        transform: translate(-50%, -50%);
+        height: 45px;
+        width: 45px;
+        background: $white url(../images/ico-arrow.svg) center no-repeat;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+        border-radius: 22.5px;
+    }
+}
+
+.footer__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 15px 45px;
+    background-color: $color-primary;
+    color: $color-text-white;
+    text-align: center;
+}
+
+/* Footer menus */
+.footer__menu {
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: lighter; // Tiene que ser más light
+    line-height: 1.88;
+    border: solid 1px orange;
+}
+
+
+/* Copyright & motto */
+.copyright-container {
+    border: solid 1px orange;
+    font-size: 14px;
+    line-height: 2.14;
+
+    .copyright, .motto {
+        display: block;
+    }
 }

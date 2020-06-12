@@ -1,0 +1,65 @@
+/* Articles */
+
+/* General styling for all articles */
+.article {
+    padding: 30px 15px 45px;
+
+    &--heading {
+        font-family: $font-secondary;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 1.25;
+        color: $color-text-dark;
+    }
+
+    &--text {
+        font-size: 18px;
+        line-height: 1.67;
+    }
+}
+
+/* Article 1: Tips */
+.article--tips {
+    // Topic
+    .tips--topic {
+        font-size: 14px;
+        line-height: 2.14;
+        color: $color-primary-light;
+    }
+
+    // Text
+    .article--text {
+        margin-top: 15px;
+        color: $color-text-light;
+    }
+
+}
+
+
+/* Article 2: Reasons */ 
+.article--reasons {
+    padding-bottom: 60px;
+    background-color: $color-background-light;
+    text-align: center;
+
+    // List
+    .article__list {
+        display: grid;
+        row-gap: 45px;
+        width: 180px;
+        margin: 45px auto;
+        > * {
+            border: solid 1px blue;
+        }
+    }
+
+    .item--heading {
+        font-family: $font-secondary;
+        font-size: 18px;
+        line-height: 1.67;
+    }
+}
+
+.article--reasons > * {
+    border: solid 1px blue;
+}

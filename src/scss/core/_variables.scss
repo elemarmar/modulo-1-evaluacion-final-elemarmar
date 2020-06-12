@@ -3,20 +3,28 @@ $font-main: "Roboto", sans-serif;
 $font-secondary:'Roboto Slab', serif;
 
 // Color palette
+$black: #000000;
+$white: #ffffff;
 $dark-grey-blue: #304268;
 $cerulean: #0271bc;
-$white: #ffffff;
+$light-blue: #8ccbea;
+$ice-blue: #eff9ff;
 $greyish-brown: #4a4a4a;
 $bright-orange: #f26002;
-$ice-blue: #eff9ff;
+
 $black-50: rgba(0, 0, 0, 0.5); // ¿Dónde?
-$black: #000000;
+
 
 // Functional color palette
+
+$color-primary: $dark-grey-blue;
+$color-primary-light: $light-blue;
+$color-primary-alternative: $cerulean;
+$color-secondary: $bright-orange;
 
 $color-text-light: $greyish-brown;
 $color-text-dark: $black;
 $color-text-white: $white;
-$color-primary: $dark-grey-blue;
-$color-primary-light: $ice-blue;
-$color-secondary: $bright-orange;
+$color-background-light: $ice-blue;
+
+

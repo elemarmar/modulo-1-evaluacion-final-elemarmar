@@ -1,0 +1,21 @@
+
+/* General styling of buttons */
+.btn {
+    height: 45px;
+    padding:  5px 25px;
+    border: solid 2px $color-secondary;
+    border-radius: 22.5px;
+    line-height: 2.25;
+    font-size: 20px;
+
+    // Button from article 1: Tips
+    &--tips {
+        color: $color-secondary;
+    }
+
+    // Button from article 2: Reasons
+    &--reasons {
+        color: $color-text-white;
+        background-color: $color-secondary;
+    }
+}
