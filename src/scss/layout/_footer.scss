@@ -1,7 +1,9 @@
 /* Footer Section */
-
 .page__footer {
     position: relative;
+    background-color: $color-primary;
+    color: $color-text-white;
+    text-align: center;
     border: solid 1px red;
 
     .footer__button {
@@ -23,9 +25,14 @@
     flex-direction: column;
     align-items: center;
     padding: 60px 15px 45px;
-    background-color: $color-primary;
-    color: $color-text-white;
-    text-align: center;
+
+    @include tablet {
+        justify-content: center;
+        align-items: baseline;
+        flex-flow: row nowrap;
+        padding: 45px 39px;
+        text-align: left;
+    }
 }
 
 /* Footer menus */
@@ -35,6 +42,10 @@
     font-weight: lighter; // Tiene que ser más light
     line-height: 1.88;
     border: solid 1px orange;
+
+    @include tablet {
+        flex: 1 1 210px;
+    }
 }
 
 
@@ -46,5 +57,10 @@
 
     .copyright, .motto {
         display: block;
+    }
+
+    @include tablet {
+        order: -1;
+        flex: 1 1 210px;
     }
 }

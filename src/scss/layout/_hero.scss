@@ -1,16 +1,24 @@
 /* HERO Section */
 .page__hero {
+    // Dimensions
+    height: 100vh;
+    padding-bottom: 53px;
+
     // Locate elements with flex
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    padding-bottom: 53px;
-    // Dimension and background
-    height: 100vh;
+
+    // Background and fonts
+    text-align: center;
     background: url(../images/cover.jpg) top center no-repeat;
     background-size: cover; // Se puede meter en background??
-    text-align: center;
+
+    @include desktop {
+        padding-bottom: 13px;
+        height: 768px;
+    }
 }
 
 /* Hero heading */
@@ -24,12 +32,29 @@
         font-weight: bold;
         text-transform: uppercase;
         line-height: 1.31;
-        text-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+        @include tablet {
+            font-size: 80px;
+        }
+
+        @include desktop {
+            font-size: 100px;
+        }
     }
 
     &--subtitle {
         margin-top: 10px;
         font-weight: 400; // No se ve igual, más light??
+
+        @include tablet {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+
+        @include desktop {
+            margin-top: 0;
+        }
     }
 }
 
@@ -41,4 +66,8 @@
     margin-top: 45px;
     background: $white url(../images/ico-scroll-down.svg) center 20px no-repeat;
     border-radius: 22.5px;
+
+    @include desktop {
+        margin-top: 30px;
+    }
 }

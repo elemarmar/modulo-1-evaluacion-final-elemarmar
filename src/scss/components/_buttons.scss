@@ -1,12 +1,15 @@
 
 /* General styling of buttons */
 .btn {
+    display: inline-block;
     height: 45px;
-    padding:  5px 25px;
+    line-height: 45px;
+    padding:  0 25px;
     border: solid 2px $color-secondary;
     border-radius: 22.5px;
-    line-height: 2.25;
+
     font-size: 20px;
+    text-align: center;
 
     // Button from article 1: Tips
     &--tips {

@@ -4,43 +4,91 @@
 .article {
     padding: 30px 15px 45px;
 
+    @include tablet {
+        padding: 30px 35px 60px;
+    }
+
+    @include desktop {
+        padding: 60px 0;
+    }
+
     &--heading {
         font-family: $font-secondary;
         font-size: 24px;
         font-weight: bold;
         line-height: 1.25;
         color: $color-text-dark;
+
+        @include tablet {
+            font-size: 26px;
+        }
+
+        @include desktop {
+            font-size: 32px;
+            line-height: 1.41;
+        }
     }
 
     &--text {
         font-size: 18px;
         line-height: 1.67;
+
+        @include tablet {
+            font-size: 20px;
+            line-height: 1.5;
+        }
     }
 }
 
 /* Article 1: Tips */
 .article--tips {
+
     // Topic
     .tips--topic {
         font-size: 14px;
         line-height: 2.14;
         color: $color-primary-light;
+
+        @include desktop {
+            font-size: 16px;
+            line-height: 1.88;
+        }
     }
 
     // Text
     .article--text {
         margin-top: 15px;
         color: $color-text-light;
+        margin-bottom: 30px;
     }
 
+    // Buttons
+    .btn--tips {
+        @include tablet {
+            width: 91px;
+        }
+
+        @include desktop {
+            width: 160px;
+        }
+    }
 }
 
 
 /* Article 2: Reasons */ 
 .article--reasons {
+    // Tiene más padding que el otro artículo
     padding-bottom: 60px;
     background-color: $color-background-light;
     text-align: center;
+
+    // Wrapper
+
+    .wrapper {
+        @include desktop {
+            max-width: 1110px;
+        }
+    }
 
     // List
     .article__list {
@@ -51,12 +99,24 @@
         > * {
             border: solid 1px blue;
         }
+
+        @include tablet {
+            width: auto;
+            margin: 45px auto 60px;
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 27px;
+        }
     }
 
     .item--heading {
         font-family: $font-secondary;
         font-size: 18px;
         line-height: 1.67;
+
+        @include tablet {
+            font-size: 24px;
+            padding-bottom: 14px;
+        }
     }
 }
 

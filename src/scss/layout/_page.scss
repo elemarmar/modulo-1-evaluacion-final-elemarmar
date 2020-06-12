@@ -10,3 +10,17 @@ html {
     padding: 0;
   }
   
+
+  // Breaking lines
+  .linebreak {
+      display: block;
+  }
+
+
+  // Wrapper 
+  .wrapper {
+      @include desktop {
+          max-width: 730px;
+          margin: auto;
+      }
+  }
