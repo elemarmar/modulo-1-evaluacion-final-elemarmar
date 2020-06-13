@@ -18,9 +18,15 @@ html {
 
 
   // Wrapper 
-  .wrapper {
-      @include desktop {
-          max-width: 730px;
-          margin: auto;
-      }
-  }
+//   .wrapper {
+//       @include tablet {
+//           max-width: 730px;
+//           margin: 0 auto;
+//       }
+//   }
+
+
+.wrapper {
+    margin: 0 auto;
+    border: 1px salmon solid;
+}

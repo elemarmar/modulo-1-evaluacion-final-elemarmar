@@ -6,6 +6,15 @@
     text-align: center;
     border: solid 1px red;
 
+    // Footer wrapper 
+    .wrapper {
+        max-width: 690px;
+
+        @include desktop {
+            max-width: 537px;
+        }
+    }
+
     .footer__button {
         position: absolute;
         top: 0;

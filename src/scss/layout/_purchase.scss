@@ -1,0 +1,45 @@
+/* Article 2: Reasons */ 
+.article--reasons {
+    // Tiene más padding que el otro artículo
+    padding-bottom: 60px;
+    background-color: $color-background-light;
+    text-align: center;
+
+    // Wrapper
+
+    .wrapper {
+        @include desktop {
+            max-width: 1110px;
+        }
+    }
+
+    // List
+    .article__list {
+        display: grid;
+        row-gap: 45px;
+        width: 180px;
+        margin: 45px auto;
+
+        @include tablet {
+            width: auto;
+            margin: 45px auto 60px;
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 27px;
+        }
+    }
+
+    .item--heading {
+        font-family: $font-secondary;
+        font-size: 18px;
+        line-height: 1.67;
+
+        @include tablet {
+            font-size: 24px;
+            padding-bottom: 14px;
+        }
+    }
+}
+
+.article--reasons > * {
+    border: solid 1px blue;
+}

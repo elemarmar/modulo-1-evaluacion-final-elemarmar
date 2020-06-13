@@ -13,13 +13,24 @@
     // Background and fonts
     text-align: center;
     background: url(../images/cover.jpg) top center no-repeat;
+    background-attachment: fixed;
     background-size: cover; // Se puede meter en background??
 
     @include desktop {
         padding-bottom: 13px;
         height: 768px;
     }
+
+    // Hero wrapper 
+    .wrapper {
+        max-width: 290px;
+
+        @include tablet {
+            max-width: 690px;
+        }
+    }
 }
+
 
 /* Hero heading */
 .hero__heading {
