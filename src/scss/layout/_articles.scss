@@ -1,0 +1,46 @@
+
+/********************************************
+*      General Styling for Articles         *
+********************************************/
+
+
+.article {
+    padding: 30px 15px 45px;
+
+    @include tablet {
+        padding: 30px 35px 60px;
+    }
+
+    @include desktop {
+        padding: 60px 0;
+    }
+
+    // Article headings
+    &--heading {
+        font-family: $font-secondary;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 1.25;
+        color: $color-text-dark;
+
+        @include tablet {
+            font-size: 26px;
+        }
+
+        @include desktop {
+            font-size: 32px;
+            line-height: 1.41;
+        }
+    }
+
+    // Article text
+    &--text {
+        font-size: 18px;
+        line-height: 1.67;
+
+        @include tablet {
+            font-size: 20px;
+            line-height: 1.5;
+        }
+    }
+}

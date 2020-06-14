@@ -1,19 +1,34 @@
-/* Article 2: Reasons */ 
+/********************************************
+*             Article: reasons              *
+********************************************/
+//
+//  1. Hero
+//    -> Hero wrapper
+//  2. Hero heading
+//  3. Hero button
+//
+//------------------------------------------//
+
+
 .article--reasons {
-    // Tiene más padding que el otro artículo
+    
+    // It has more padding than normal articles
     padding-bottom: 60px;
     background-color: $color-background-light;
     text-align: center;
 
-    // Wrapper
-
+    /*-----------------*
+     * Reasons wrapper *
+     *----------------*/
     .wrapper {
         @include desktop {
             max-width: 1110px;
         }
     }
 
-    // List
+    /*--------------*
+     * Reasons List *
+     *-------------*/
     .article__list {
         display: grid;
         row-gap: 45px;
@@ -38,8 +53,4 @@
             padding-bottom: 14px;
         }
     }
-}
-
-.article--reasons > * {
-    border: solid 1px blue;
 }
