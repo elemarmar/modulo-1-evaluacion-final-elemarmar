@@ -9,12 +9,14 @@
 //  5. Navigational list
 //
 //------------------------------------------//
-// Notes: the  classes defined on the left can be referred here in the comments as the expressions on the right 'cause it's shorter! : D
-//
-// hamburger-container--open    ->    "menu open"
-//  |--> This is the menu that, when clicked, opens the navigational list
-// hamburger-container--close   ->    "menu close"
-//  |--> This is the menu that, when clicked, closes the navigational list and disappears, showing the "menu open" again.
+/* Notes:  the  classes defined on the left can be referred here in the comments as the expressions on the right 'cause it's shorter! : D
+
+.hamburger-container--open    ->    "menu open"
+  |--> This is the menu that, when clicked, opens the navigational list
+
+.hamburger-container--close   ->    "menu close"
+  |--> This is the menu that, when clicked, closes the navigational list and disappears, showing the "menu open" again.
+  */
 
 .header {
     position: fixed;
@@ -53,6 +55,42 @@
     position: absolute;
     top: 0;
     z-index: 1;
+
+    .hamburger {
+        display: inline-block;
+        width: 20px;
+        height: 2px;
+        background-color: $white;
+        position: relative;
+
+        &:before {
+            display: block;
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 2px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            margin-top: -7px;
+            background-color: $white;
+        }
+
+        &:after {
+            display: block;
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 2px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            margin-top: 7px;
+            background-color: $white;
+            z-index: 200;
+
+        }
+    }
 }
 
 
@@ -61,9 +99,34 @@
 *-----------------------------*/
 /* This menu (hamburger-container--open), when clicked takes us to the second menu (hamburger-container--close) */
 
-// We hide the "menu close" container so that when we load the page we just see the "menu open" container
-.hamburger-container--close {
-    display: none;
+.hamburger-container--open {
+    .hamburger {
+        &:before {
+            transition: all 1s ease;
+        }
+
+        &:after {
+            transition: all 1s ease;
+        }
+    }
+
+    // Animations
+    // Because these animations are a bit more complicated and each menu has a different one, they are directly included here rather than in the animations partial
+    @include contract-stretch(20px);
+    &:hover .hamburger {
+        animation: contract-stretch 0.3s ease;
+        animation-fill-mode: both;
+    }
+
+    &:hover .hamburger:after {
+        animation: contract-stretch 0.3s ease 0.2s;
+        animation-fill-mode: both;
+    }
+
+    &:hover .hamburger:before {
+        animation: contract-stretch 0.3s ease 0.2s;
+        animation-fill-mode: both;
+    }
 }
 
 // When we click on the "menu open", it targets the "menu close". When that happens do the following:
@@ -73,6 +136,12 @@
     &:target~ul {
         opacity: 1;
         width: 200px;
+        @include tablet {
+            width: 300px;
+        }
+        @include desktop {
+            width: 400px;
+        }
     }
     // 2. Show the "menu close", hiding the "menu open"
     &:target {
@@ -86,93 +155,24 @@
 *   Nav menu 2: "Menu close"  *
 *-----------------------------*/
 
-// When we click on the "menu close", it targets the "menu open". When that happens do the following:
-
-#menu--open {
-    // hide the "menu close"
-    &:target~.hamburger-container-close {
-        display: none;
-    }
-}
-
-/*----------------------------*
-*      Navigational list     *
-*-----------------------------*/
-
-.header__menu--list {
-    padding-top: 54px;
-    padding-bottom: 20px;
-    width: 0;
-    background-color: $color-primary-alternative;
-    position: absolute;
-    top: 0;
-    opacity: 0;
-    color: $color-text-white;
-    font-weight: 300;
-    font-size: 14px;
-    transition: all 1s ease;
-}
-
-.menu--item {
-    padding: 5px 15px;
-    background: rgb(1, 96, 163);
-
-    &:hover {
-        background: $color-primary-alternative;
-        cursor: pointer;
-        padding-left: 20px;
-    }
-}
-
-
-// Burguer
-
-
-
-
-
-
 .hamburger-container--close {
+    // We hide the "menu close" container so that when we load the page we just see the "menu open" container
+    display: none;
+
     .hamburger {
-        transition-duration: 0s;
-        display: inline-block;
-        width: 20px;
-        height: 2px;
-        background-color: $white;
-        position: relative;
-        z-index: 20;
-
-
-
         &:before {
+            transition-property: margin, transform;
             transition-delay: 0s, 0.2s;
             transition-duration: 0.2s;
-            transition-property: margin, transform;
-            display: block;
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 2px;
-            margin-top: -7px;
-            background-color: $white;
         }
 
         &:after {
+            transition-property: margin, transform;
             transition-delay: 0s, 0.2s;
             transition-duration: 0.2s;
-            transition-property: margin, transform;
-            display: block;
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 2px;
-
-            margin-top: 7px;
-            background-color: $white;
-            z-index: 200;
         }
-
     }
+
     &:hover .hamburger {
         background-color: rgba(0, 0, 0, 0);
     }
@@ -188,70 +188,53 @@
     }
 }
 
+// When we click on the "menu close", it targets the "menu open". When that happens do the following:
 
-.hamburger-container--open {
-    .hamburger {
-        display: inline-block;
-        width: 20px;
-        height: 2px;
-        background-color: $white;
-        position: relative;
-        z-index: 20;
-
-
-
-        &:before {
-            transition: all 1s ease;
-            display: block;
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 2px;
-            left: 0;
-            right: 0;
-            margin: auto;
-            margin-top: -7px;
-            background-color: $white;
-        }
-
-        &:after {
-            transition: all 1s ease;
-            display: block;
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 2px;
-            left: 0;
-            right: 0;
-            margin: auto;
-            margin-top: 7px;
-            background-color: $white;
-            z-index: 200;
-        }
-
-
+#menu--open {
+    // hide the "menu close"
+    &:target~.hamburger-container-close {
+        display: none;
     }
-
-    &:hover .hamburger {
-        animation: contract-stretch 0.3s ease;
-        animation-fill-mode: both;
-
-    }
-
-    &:hover .hamburger:after {
-        animation: contract-stretch 0.3s ease 0.2s;
-        animation-fill-mode: both;
-    }
-
-    &:hover .hamburger:before {
-        animation: contract-stretch 0.3s ease 0.2s;
-        animation-fill-mode: both;
-    }
-
-
 }
 
-@keyframes contract-stretch {
-    0% {width: 0;}
-    100% {width: 20px;}
+/*----------------------------*
+*      Navigational list     *
+*-----------------------------*/
+
+.header__menu--list {
+    // Position and dimensions
+    position: absolute;
+    top: 0;
+    width: 0;
+    padding-top: 54px;
+    padding-bottom: 20px;
+    opacity: 0;
+
+    // Fonts and backgorunds
+    font-size: 14px;
+    font-weight: 300;
+    color: $color-text-white;
+    background-color: rgba($color-primary-alternative,.9);
+    border-radius: 4px;
+
+    // Transitions
+    transition: all 1s ease;
+
+    @include tablet {
+        font-size: 16px;
+    }
+
+    @include desktop {
+        font-size: 20px;
+    }
+}
+
+.menu--item {
+    padding: 5px 15px;
+
+    &:hover {
+        background: $color-primary-alternative;
+        cursor: pointer;
+        padding-left: 20px;
+    }
 }
