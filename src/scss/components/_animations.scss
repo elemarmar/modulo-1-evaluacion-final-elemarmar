@@ -102,10 +102,11 @@
         left: 0;
         right: 0;
         margin: auto;
+        width: 0;
         background-color: $color-secondary;
 
-        @include border-bottom(5px,400px);
-        animation: border-bottom 3s ease 2s;
+        @include border-bottom(3px,400px);
+        animation: border-bottom 1s ease 5s;
         animation-fill-mode: forwards;
     }
 

@@ -1,12 +1,23 @@
-/* Footer Section */
+/********************************************
+*                 Footer                    *
+********************************************/
+//
+//  1. Footer
+//    -> Footer wrapper
+//  2. Footer container
+//  3. Footer menu
+//  4. Copyright & motto
+//
+//------------------------------------------//
 .footer {
     position: relative;
     background-color: $color-primary;
     color: $color-text-white;
     text-align: center;
-    border: solid 1px red;
 
-    // Footer wrapper 
+    /*----------------*
+     * Footer wrapper *
+     *----------------*/
     .wrapper {
         max-width: 690px;
 
@@ -15,10 +26,11 @@
             max-width: 590px;
         }
     }
-
-
 }
 
+/*-------------------------*
+* Footer container wrapper *
+*-------------------------*/
 .footer__container {
     display: flex;
     flex-direction: column;
@@ -34,24 +46,28 @@
     }
 }
 
-/* Footer menus */
+/*------------*
+* Footer menu *
+*------------*/
 .footer__menu {
     margin-bottom: 30px;
     text-transform: uppercase;
     font-weight: lighter; // Tiene que ser más light
     line-height: 1.88;
-    border: solid 1px orange;
 
     @include tablet {
         flex: 1 1 210px;
     }
 
+    // Footer menu items
     &--item {
-
+        transition: color .1s ease-in;
         a {
             display: inline-block;
 
         }
+
+        // Font Awesome icons
         .fas, .fab, .far {
             opacity: 0;
             transition: opacity .1s ease-in;
@@ -74,9 +90,10 @@
 }
 
 
-/* Copyright & motto */
+/*------------------*
+* Copyright & Motto *
+*------------------*/
 .copyright-container {
-    border: solid 1px orange;
     font-size: 14px;
     line-height: 2.14;
 
