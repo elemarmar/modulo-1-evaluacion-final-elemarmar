@@ -1,5 +1,5 @@
 /* Footer Section */
-.page__footer {
+.footer {
     position: relative;
     background-color: $color-primary;
     color: $color-text-white;
@@ -15,18 +15,7 @@
         }
     }
 
-    .footer__button {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        // Fix centering with translate
-        transform: translate(-50%, -50%);
-        height: 45px;
-        width: 45px;
-        background: $white url(../images/ico-arrow.svg) center no-repeat;
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-        border-radius: 22.5px;
-    }
+
 }
 
 .footer__container {

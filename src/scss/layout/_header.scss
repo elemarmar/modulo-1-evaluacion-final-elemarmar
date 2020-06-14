@@ -1,6 +1,257 @@
-.page__header {
+/********************************************
+*                 Header                    *
+********************************************/
+//
+//  1. Header
+//  2. Nav menu: general settings 
+//  3. Nav menu 1: "menu-open"
+//  4. Nav menu 2: "menu-close"
+//  5. Navigational list
+//
+//------------------------------------------//
+// Notes: the  classes defined on the left can be referred here in the comments as the expressions on the right 'cause it's shorter! : D
+//
+// hamburger-container--open    ->    "menu open"
+//  |--> This is the menu that, when clicked, opens the navigational list
+// hamburger-container--close   ->    "menu close"
+//  |--> This is the menu that, when clicked, closes the navigational list and disappears, showing the "menu open" again.
+
+.header {
     position: fixed;
+    z-index: 200;
+}
+
+/*----------------------------*
+*  Nav menu: general settings *
+*-----------------------------*/
+/* There are 2 menus to be able to toggle between the "menu--open" and "menu--close" without using JavaScript. The general settings for both menus (.hamburger-container--open & .hamburger-container--close) are contained in the class .hamburger-container: */
+
+.hamburger-container {
+    position: relative;
+    z-index: 300;
     height: 44px;
     width: 44px;
-    background: $color-primary-alternative url(../images/ico-menu.svg) no-repeat center;
+    background-color: $color-primary-alternative;
+    cursor: pointer;
+
+    a {
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+
+        // Center hamburger menu with flex
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
+
+/* Position both menus in the same place so we can toggle between them by changing their z-index */
+.hamburger-container--open,
+.hamburger-container--close {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+
+/*----------------------------*
+*   Nav menu 1: "Menu open"   *
+*-----------------------------*/
+/* This menu (hamburger-container--open), when clicked takes us to the second menu (hamburger-container--close) */
+
+// We hide the "menu close" container so that when we load the page we just see the "menu open" container
+.hamburger-container--close {
+    display: none;
+}
+
+// When we click on the "menu open", it targets the "menu close". When that happens do the following:
+#menu--close {
+
+    // 1. Show the navigational list    
+    &:target~ul {
+        opacity: 1;
+        width: 200px;
+    }
+    // 2. Show the "menu close", hiding the "menu open"
+    &:target {
+        display: block;
+        z-index: 300;
+    }
+
+}
+
+/*----------------------------*
+*   Nav menu 2: "Menu close"  *
+*-----------------------------*/
+
+// When we click on the "menu close", it targets the "menu open". When that happens do the following:
+
+#menu--open {
+    // hide the "menu close"
+    &:target~.hamburger-container-close {
+        display: none;
+    }
+}
+
+/*----------------------------*
+*      Navigational list     *
+*-----------------------------*/
+
+.header__menu--list {
+    padding-top: 54px;
+    padding-bottom: 20px;
+    width: 0;
+    background-color: $color-primary-alternative;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    color: $color-text-white;
+    font-weight: 300;
+    font-size: 14px;
+    transition: all 1s ease;
+}
+
+.menu--item {
+    padding: 5px 15px;
+    background: rgb(1, 96, 163);
+
+    &:hover {
+        background: $color-primary-alternative;
+        cursor: pointer;
+        padding-left: 20px;
+    }
+}
+
+
+// Burguer
+
+
+
+
+
+
+.hamburger-container--close {
+    .hamburger {
+        transition-duration: 0s;
+        display: inline-block;
+        width: 20px;
+        height: 2px;
+        background-color: $white;
+        position: relative;
+        z-index: 20;
+
+
+
+        &:before {
+            transition-delay: 0s, 0.2s;
+            transition-duration: 0.2s;
+            transition-property: margin, transform;
+            display: block;
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 2px;
+            margin-top: -7px;
+            background-color: $white;
+        }
+
+        &:after {
+            transition-delay: 0s, 0.2s;
+            transition-duration: 0.2s;
+            transition-property: margin, transform;
+            display: block;
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 2px;
+
+            margin-top: 7px;
+            background-color: $white;
+            z-index: 200;
+        }
+
+    }
+    &:hover .hamburger {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    &:hover .hamburger:after {
+        margin-top: 0;
+        transform: rotate(-45deg);
+    }
+
+    &:hover .hamburger:before {
+        transform: rotate(45deg);
+        margin-top: 0;
+    }
+}
+
+
+.hamburger-container--open {
+    .hamburger {
+        display: inline-block;
+        width: 20px;
+        height: 2px;
+        background-color: $white;
+        position: relative;
+        z-index: 20;
+
+
+
+        &:before {
+            transition: all 1s ease;
+            display: block;
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 2px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            margin-top: -7px;
+            background-color: $white;
+        }
+
+        &:after {
+            transition: all 1s ease;
+            display: block;
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 2px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            margin-top: 7px;
+            background-color: $white;
+            z-index: 200;
+        }
+
+
+    }
+
+    &:hover .hamburger {
+        animation: contract-stretch 0.3s ease;
+        animation-fill-mode: both;
+
+    }
+
+    &:hover .hamburger:after {
+        animation: contract-stretch 0.3s ease 0.2s;
+        animation-fill-mode: both;
+    }
+
+    &:hover .hamburger:before {
+        animation: contract-stretch 0.3s ease 0.2s;
+        animation-fill-mode: both;
+    }
+
+
+}
+
+@keyframes contract-stretch {
+    0% {width: 0;}
+    100% {width: 20px;}
 }

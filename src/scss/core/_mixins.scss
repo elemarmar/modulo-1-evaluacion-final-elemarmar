@@ -8,4 +8,42 @@
     @media all and (min-width:$screen-large) {
         @content
     }
+};
+
+
+
+/* -------------- Animations -------------- */
+
+// Fade in effect
+@mixin fadein($minopacity,$maxopacity) {
+    @keyframes fadein {
+        from {opacity: $minopacity;}
+        to {opacity: $maxopacity;}
+    }
+}
+
+
+@mixin expand($minwidth,$maxwidth) {
+    @keyframes expand {
+        0% { height: $minwidth;}
+        100% { height: $maxwidth;}
+    }
+}
+/* -------- */
+
+
+/***** Translating the background-image ****/
+@mixin translate-background($start) {
+    @keyframes translate-background {
+        from {background-position: center $start;}
+        to {background-position: center;}
+    }
+}
+
+/* Translating an object on the Y axis */
+@mixin translate-object($start) {
+    @keyframes translate-object {
+        from {transform: translate(0,$start);}
+        to {transform: translate(0);}
+    }
 }

@@ -19,52 +19,43 @@
   }
 
 
-  .footer__button {
-      animation: fadeIn 1s ease, backgroundUp 1s ease, translateDown 1s ease;
-  }
-
-  .hero__button {
-    animation: fadeIn 1s ease, backgroundDown 1s ease, translateUp 1s ease;
-  }
 
 
-  @keyframes fadeIn {
-    from {opacity: 0%;}
-    to {opacity: 100%;}
-  }
+/*--------------------*
+*  Button Animations  *
+*--------------------*/
 
-  @keyframes backgroundUp {
-      from {background-position: center 30px;}
+/*        Hero        
+----------------------*/
 
-      to {background-position: center;}
-  }
-
-  @keyframes backgroundDown {
-    from {background-position: center -30px;}
-
-    to {background-position: center;}
-  }
-
-  @keyframes translateUp {
-      from {
-        transform: translate(0,10px);
-
-      }
-      to {
-        transform: translate(0);
-      }
+.btn-hero {
+    opacity: 0;
+    @include fadein(0,1);
+    @include translate-background(-30px);
+    @include translate-object(10px);
+    animation: 
+        fadein 1s ease 3s, 
+        translate-background 1s ease 3s,
+        translate-object 1s ease 3s;
+    animation-fill-mode: forwards;
   }
 
 
-  @keyframes translateDown {
-    from {
-      transform: translate(0, -10px);
 
-    }
-    to {
-      transform: translate(0);
-    }
+/*        Footer        
+----------------------*/
+.btn-footer {
+    opacity: 0;
+    @include fadein(0,1);
+    @include translate-background(30px);
+    @include translate-object(-10px);
+    animation: 
+        fadein 1s ease 3s, 
+        translate-background 1s ease 3s,
+        translate-object 1s ease 3s;
+    animation-fill-mode: forwards;
 }
+
 
 
 //  Articles
@@ -80,4 +71,25 @@
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(193, 203, 212, 0.7) 0px 0px 0px 1px inset, rgb(193, 203, 212) 0px -1px 0px 0px inset;
     border: medium none;
     background-color: $white;
+}
+
+
+
+
+
+
+/*--------------------*
+*   Text Animations   *
+*--------------------*/
+
+.hero__heading--title {
+    opacity: 0;
+    animation: fadein 2s ease 2s; 
+    animation-fill-mode: forwards;
+}
+
+.hero__heading--subtitle {
+    opacity: 0;
+    animation: fadein 2s ease 2.5s; 
+    animation-fill-mode: forwards;
 }

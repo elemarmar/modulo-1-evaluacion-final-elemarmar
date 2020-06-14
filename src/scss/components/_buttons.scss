@@ -64,3 +64,25 @@
         background-color: $color-secondary;
     }
 }
+
+
+.btn-circle {
+    height: 45px;
+    width: 45px;
+    border-radius: 22.5px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+
+.btn-footer {
+    //Position btn
+    position: absolute;
+    top: -22px;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    // Other
+    background: $white url(../images/ico-arrow.svg) center no-repeat;
+
+}
