@@ -44,6 +44,32 @@
     @include tablet {
         flex: 1 1 210px;
     }
+
+    &--item {
+        a {
+            border: solid 1px salmon;
+            display: inline-block;
+
+        }
+        .fas, .fab, .far {
+            border: solid 1px white;
+            opacity: 0;
+            transition: opacity .1s ease-in;
+            color: $color-secondary;
+        }  
+
+        &:hover  {
+            color: $ice-blue;
+
+        .fas, .fab, .far {
+            opacity: 1;
+
+        }
+        }
+    }
+
+ 
+
 }
 
 
@@ -55,6 +81,10 @@
 
     .copyright, .motto {
         display: block;
+    }
+
+    .motto .fas {
+        color: salmon;
     }
 
     @include tablet {
