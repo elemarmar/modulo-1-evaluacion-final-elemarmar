@@ -2,10 +2,10 @@
 *             Article: tips                 *
 ********************************************/
 //
-//  1. Hero
-//    -> Hero wrapper
-//  2. Hero heading
-//  3. Hero button
+//  1. Article tips general
+//    -> tips wrapper
+//    -> tips topic (insomnia tips)
+//    -> article text
 //
 //------------------------------------------//
 
@@ -40,17 +40,6 @@
         margin-top: 15px;
         color: $color-text-light;
         margin-bottom: 30px;
-    }
-
-    // Buttons
-    .btn--tips {
-        @include tablet {
-            width: 91px;
-        }
-
-        @include desktop {
-            width: 160px;
-        }
     }
 }
 

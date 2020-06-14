@@ -54,3 +54,16 @@
         100% {width: $end;}
     }
 }
+
+@mixin border-bottom($height,$width) {
+    @keyframes border-bottom {
+        from {
+            width: 0;
+        }
+        to {
+            width: 90%;
+            max-width: $width;
+            height: $height;
+        }
+    }
+}

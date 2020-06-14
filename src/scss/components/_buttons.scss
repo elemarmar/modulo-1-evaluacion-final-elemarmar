@@ -1,31 +1,49 @@
+/********************************************
+*                  Buttons                     *
+********************************************/
+//
+//  1. General styling of buttons
+//      1.1. Article 1 "Tips" Button
+//      1.2. Article 2 "Reasons" Button
+//
+//  2. General styling of circle buttons
+//      2.1. Hero Arrow circle Button
+//      2.2. Footer Arrow circle Button
+//
+//------------------------------------------//
 
-/* General styling of buttons */
+/*------------------------------*
+* 1. General Styling of buttons *
+*------------------------------*/
 .btn {
+    // Position and dimension
     position: relative;
     display: inline-block;
+    padding:  0 25px;
     height: 45px;
     line-height: 45px;
-    padding:  0 25px;
+
+    // Background and fonts
+    font-size: 20px;
+    text-align: center;
     border: solid 2px $color-secondary;
     border-radius: 22.5px;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-
-    font-size: 20px;
-    text-align: center;
     overflow: hidden;
 
     &:hover {
         cursor: pointer;
     }
 
-    // Button from article 1: Tips
+    /*-----------------------------*
+    * 1.1. Article 1 "Tips" Button *
+    *------------------------------*/   
     &--tips {
         color: $color-secondary;
         transition: color 0.3s ease;
         transform: perspective(1px) translateZ(0); //What does this do?
 
         &:hover {
-
             color: $color-text-white;
             transform: scale(1.5);
             transform: translate(-1px,-1px);
@@ -56,24 +74,62 @@
         &:hover:before {
             transform: scaleX(1);
         }
+
+        // Media Queries
+        @include tablet {
+            width: 91px;
+        }
+
+        @include desktop {
+            width: 160px;
+        }
     }
 
-    // Button from article 2: Reasons
+    /*--------------------------------*
+    * 1.2. Article 2 "Reasons" Button *
+    *---------------------------------*/  
     &--reasons {
         color: $color-text-white;
         background-color: $color-secondary;
     }
 }
 
+    // Buttons
+    .btn--tips {
 
+    }
+
+
+/*-------------------------------------*
+* 2. General styling of circle buttons *
+*-------------------------------------*/
 .btn-circle {
     height: 45px;
     width: 45px;
     border-radius: 22.5px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    transition: background-color 0.5s ease;
+
+    &:hover {
+        background-color: $color-primary;
+    }
 }
 
+/*------------------------------*
+* 2.1. Hero Arrow circle Button *
+*-------------------------------*/
+.btn-hero {
+    margin-top: 45px;
+    background: $white url(../images/ico-scroll-down.svg) center 20px no-repeat;
 
+    @include desktop {
+        margin-top: 30px;
+    }
+}
+
+/*--------------------------------*
+* 2.2. Footer Arrow circle Button *
+*---------------------------------*/
 .btn-footer {
     //Position btn
     position: absolute;
@@ -82,7 +138,6 @@
     right: 0;
     margin: auto;
 
-    // Other
+    // Background
     background: $white url(../images/ico-arrow.svg) center no-repeat;
-
 }

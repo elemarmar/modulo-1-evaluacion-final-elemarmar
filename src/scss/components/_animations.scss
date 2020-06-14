@@ -92,6 +92,23 @@
     opacity: 0;
     animation: fadein 2s ease 2.5s; 
     animation-fill-mode: forwards;
+
+
+    &:after {
+        content: '';
+        position: absolute;
+        z-index: 300;
+        bottom: -5px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background-color: $color-secondary;
+
+        @include border-bottom(5px,400px);
+        animation: border-bottom 3s ease 2s;
+        animation-fill-mode: forwards;
+    }
+
 }
 
 /*--------------------*

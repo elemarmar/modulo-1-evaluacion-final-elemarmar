@@ -81,6 +81,7 @@
     }
 
     &--subtitle {
+        position: relative;
         margin-top: 10px;
         font-weight: 400;
 
@@ -95,22 +96,6 @@
     }
 }
 
-/*--------------*
-*  Hero button  *
-*---------------*/
-.btn-hero {
-    margin-top: 45px;
-    background: $white url(../images/ico-scroll-down.svg) center 20px no-repeat;
-    transition: background 0.5s ease;
-
-    @include desktop {
-        margin-top: 30px;
-    }
-
-    &:hover {
-        background: $color-primary url(../images/ico-scroll-down.svg) center 20px no-repeat;
-    }
-}
 
 
 

@@ -2,10 +2,9 @@
 *             Article: reasons              *
 ********************************************/
 //
-//  1. Hero
-//    -> Hero wrapper
-//  2. Hero heading
-//  3. Hero button
+//  1. Article reasons
+//    -> Reasons wrapper
+//    -> Reasons list
 //
 //------------------------------------------//
 
@@ -41,16 +40,16 @@
             grid-template-columns: 1fr 1fr 1fr;
             column-gap: 27px;
         }
-    }
 
-    .item--heading {
-        font-family: $font-secondary;
-        font-size: 18px;
-        line-height: 1.67;
-
-        @include tablet {
-            font-size: 24px;
-            padding-bottom: 14px;
+        .item--heading {
+            font-family: $font-secondary;
+            font-size: 18px;
+            line-height: 1.67;
+    
+            @include tablet {
+                font-size: 24px;
+                padding-bottom: 14px;
+            }
         }
     }
 }
