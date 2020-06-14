@@ -11,7 +11,8 @@
         max-width: 690px;
 
         @include desktop {
-            max-width: 537px;
+            // It's supposed to be 537 but I choose 550px
+            max-width: 590px;
         }
     }
 
@@ -47,19 +48,18 @@
 
     &--item {
         a {
-            border: solid 1px salmon;
             display: inline-block;
 
         }
         .fas, .fab, .far {
-            border: solid 1px white;
             opacity: 0;
             transition: opacity .1s ease-in;
-            color: $color-secondary;
+            color: salmon;
         }  
 
         &:hover  {
             color: $ice-blue;
+            color: salmon;
 
         .fas, .fab, .far {
             opacity: 1;
