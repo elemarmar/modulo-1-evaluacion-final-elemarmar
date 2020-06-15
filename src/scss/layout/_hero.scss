@@ -27,8 +27,8 @@
 
     /* Animation
        - load the animations */
-    @include expand(0,100vh);
-    @include fadein(0,1);
+    @include expand(0, 100vh);
+    @include fadein(0, 1);
     /* - set the animations */
     animation: fadein 4s ease, expand 3s ease;
 
@@ -37,6 +37,7 @@
         // -> background-attachment:fixed no funciona en iphone
         background-attachment: fixed;
     }
+
     @include desktop {
         padding-bottom: 13px;
         height: 768px;
@@ -95,7 +96,3 @@
         }
     }
 }
-
-
-
-

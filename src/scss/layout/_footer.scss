@@ -57,35 +57,41 @@
 
     @include tablet {
         flex: 1 1 210px;
+        margin-bottom: 0;
     }
 
     // Footer menu items
     &--item {
         transition: color .1s ease-in;
+
         a {
             display: inline-block;
 
         }
 
         // Font Awesome icons
-        .fas, .fab, .far {
+        .fas,
+        .fab,
+        .far {
             opacity: 0;
             transition: opacity .1s ease-in;
             color: salmon;
-        }  
+        }
 
-        &:hover  {
+        &:hover {
             color: $ice-blue;
             color: salmon;
 
-        .fas, .fab, .far {
-            opacity: 1;
+            .fas,
+            .fab,
+            .far {
+                opacity: 1;
 
-        }
+            }
         }
     }
 
- 
+
 
 }
 
@@ -97,7 +103,8 @@
     font-size: 14px;
     line-height: 2.14;
 
-    .copyright, .motto {
+    .copyright,
+    .motto {
         display: block;
     }
 

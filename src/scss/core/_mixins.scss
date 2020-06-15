@@ -1,70 +1,97 @@
+/*-------------------------*
+*      Media Queries       *
+*-------------------------*/
+
+
 @mixin tablet {
     @media all and (min-width:$screen-medium) {
         @content
     }
-};
+}
+
+;
 
 @mixin desktop {
     @media all and (min-width:$screen-large) {
         @content
     }
-};
+}
+
+;
 
 
-
-/* -------------- Animations -------------- */
+/*-------------------------*
+*       Animations         *
+*-------------------------*/
 
 // Fade in effect
-@mixin fadein($minopacity,$maxopacity) {
+//-- used in hero background and buttons
+@mixin fadein($minopacity, $maxopacity) {
     @keyframes fadein {
-        from {opacity: $minopacity;}
-        to {opacity: $maxopacity;}
+        from {
+            opacity: $minopacity;
+        }
+
+        to {
+            opacity: $maxopacity;
+        }
     }
 }
 
-
-@mixin expand($minwidth,$maxwidth) {
+// Expand effect
+//-- used in hero background
+@mixin expand($minwidth, $maxwidth) {
     @keyframes expand {
-        0% { height: $minwidth;}
-        100% { height: $maxwidth;}
+        0% {
+            height: $minwidth;
+        }
+
+        100% {
+            height: $maxwidth;
+        }
     }
 }
-/* -------- */
 
 
-/***** Translating the background-image ****/
+
+// Translating the background-image 
+//-- used in circle buttons
 @mixin translate-background($start) {
     @keyframes translate-background {
-        from {background-position: center $start;}
-        to {background-position: center;}
+        from {
+            background-position: center $start;
+        }
+
+        to {
+            background-position: center;
+        }
     }
 }
 
-/* Translating an object on the Y axis */
+// Translating an object on the Y axis 
+//-- used in the circle buttons
 @mixin translate-object($start) {
     @keyframes translate-object {
-        from {transform: translate(0,$start);}
-        to {transform: translate(0);}
+        from {
+            transform: translate(0, $start);
+        }
+
+        to {
+            transform: translate(0);
+        }
     }
 }
 
+// Stretch an object
+//-- used in hamburger
 @mixin contract-stretch($end) {
     @keyframes contract-stretch {
-        0% {width: 0;}
-        100% {width: $end;}
-    }
-}
-
-@mixin border-bottom($height,$width) {
-    @keyframes border-bottom {
-        from {
+        0% {
             width: 0;
         }
-        to {
-            width: 90%;
-            max-width: $width;
-            height: $height;
+
+        100% {
+            width: $end;
         }
     }
 }
-

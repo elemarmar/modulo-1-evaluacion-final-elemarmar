@@ -113,6 +113,7 @@
     // Animations
     // Because these animations are a bit more complicated and each menu has a different one, they are directly included here rather than in the animations partial
     @include contract-stretch(20px);
+
     &:hover .hamburger {
         animation: contract-stretch 0.3s ease;
         animation-fill-mode: both;
@@ -136,13 +137,16 @@
     &:target~ul {
         opacity: 1;
         width: 200px;
+
         @include tablet {
             width: 300px;
         }
+
         @include desktop {
             width: 400px;
         }
     }
+
     // 2. Show the "menu close", hiding the "menu open"
     &:target {
         display: block;
@@ -191,6 +195,7 @@
 // When we click on the "menu close", it targets the "menu open". When that happens do the following:
 
 #menu--open {
+
     // hide the "menu close"
     &:target~.hamburger-container-close {
         display: none;
@@ -214,7 +219,7 @@
     font-size: 14px;
     font-weight: 300;
     color: $color-text-white;
-    background-color: rgba($color-primary-alternative,.9);
+    background-color: rgba($color-primary-alternative, .9);
     border-radius: 4px;
 
     // Transitions

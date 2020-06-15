@@ -19,7 +19,7 @@
     // Position and dimension
     position: relative;
     display: inline-block;
-    padding:  0 25px;
+    padding: 0 25px;
     height: 45px;
     line-height: 45px;
 
@@ -37,7 +37,7 @@
 
     /*-----------------------------*
     * 1.1. Article 1 "Tips" Button *
-    *------------------------------*/   
+    *------------------------------*/
     &--tips {
         color: $color-secondary;
         transition: color 0.3s ease;
@@ -46,8 +46,8 @@
         &:hover {
             color: $color-text-white;
             transform: scale(1.5);
-            transform: translate(-1px,-1px);
-            box-shadow: 4px 11px 24px -10px rgba(0,0,0,0.6);
+            transform: translate(-1px, -1px);
+            box-shadow: 4px 11px 24px -10px rgba(0, 0, 0, 0.6);
         }
 
         &:before {
@@ -67,7 +67,7 @@
             border-radius: 22.5px;
         }
 
-        &:hover, &:focus, &:active {
+        &:hover {
             color: white;
         }
 
@@ -87,10 +87,18 @@
 
     /*--------------------------------*
     * 1.2. Article 2 "Reasons" Button *
-    *---------------------------------*/  
+    *---------------------------------*/
     &--reasons {
         color: $color-text-white;
         background-color: $color-secondary;
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        transition-duration: 0.3s;
+        transition-property: background;
+
+        &:hover {
+            background: none;
+            color: $color-secondary;
+        }
     }
 }
 
