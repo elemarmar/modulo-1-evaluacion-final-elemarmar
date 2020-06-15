@@ -235,11 +235,15 @@
 }
 
 .menu--item {
-    padding: 5px 15px;
 
     &:hover {
         background: $color-primary-alternative;
-        cursor: pointer;
         padding-left: 20px;
+    }
+
+    a {
+        padding: 5px 15px;
+        display: inline-block;
+        width: 100%;
     }
 }
