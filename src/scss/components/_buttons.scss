@@ -99,6 +99,14 @@
             background: none;
             color: $color-secondary;
         }
+
+        @include tablet {
+            padding: 0 43px;
+        }
+
+        @include tablet {
+            padding: 0 63px;
+        }
     }
 }
 
